@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kencana_live_timer/components/custom_button_outline.dart';
 import 'package:kencana_live_timer/components/custom_button_primary.dart';
+import 'package:kencana_live_timer/constant/directory_asset.dart';
 import 'package:kencana_live_timer/modules/home/controllers/home_controller.dart';
 import 'package:kencana_live_timer/themes/theme.dart';
 import 'package:kencana_live_timer/utils/sizes.dart';
@@ -31,14 +32,19 @@ class TimerScreen extends StatelessWidget {
     HomeController homeC = Get.find();
     return Column(
       children: [
+        Padding(
+          padding: EdgeInsets.only(bottom: Sizes.s15),
+          child: Image.asset(
+            DirectoryAsset.kencanaLiveLogo,
+            height: Sizes.s180,
+            fit: BoxFit.fitHeight,
+          ),
+        ),
         Container(
-          width: Sizes.s400,
+          width: Sizes.s465,
           padding: EdgeInsets.all(Sizes.s1),
           margin: EdgeInsets.only(
-              right: Sizes.s50,
-              left: Sizes.s50,
-              top: Sizes.s55,
-              bottom: Sizes.s20),
+              right: Sizes.s50, left: Sizes.s50, bottom: Sizes.s20),
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -120,7 +126,18 @@ class TimerScreen extends StatelessWidget {
                   onPress: () => homeC.onReset(),
                 ))
           ],
-        )
+        ),
+        SizedBox(
+          height: Sizes.s30,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: Sizes.s15),
+          child: Image.asset(
+            DirectoryAsset.ghostNoteLogo,
+            height: Sizes.s120,
+            fit: BoxFit.fitHeight,
+          ),
+        ),
       ],
     );
   }
@@ -130,70 +147,81 @@ class TimerScreen extends StatelessWidget {
     return Center(
       child: Column(
         children: [
+          Padding(
+            padding: EdgeInsets.only(bottom: Sizes.s15),
+            child: Image.asset(
+              DirectoryAsset.kencanaLiveLogo,
+              height: Sizes.s140,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
           Text(
             homeC.mainFC.text,
             style:
                 TextStyle(fontSize: FontSize.s40, fontWeight: FontWeight.w700),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                alignment: Alignment.center,
-                height: Sizes.s350,
-                width: Sizes.s350,
-                child: Text(
-                  "${homeC.myDuration.value?.inHours.remainder(24).toString().padLeft(2, "0")}",
-                  style: TextStyle(
-                      fontSize: FontSize.s240, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Column(
-                children: [
-                  Text(
-                    ":",
-                    style: TextStyle(
-                        fontSize: FontSize.s240, fontWeight: FontWeight.bold),
+          Container(
+            height: Sizes.s400,
+            alignment: Alignment.topCenter,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "${homeC.myDuration.value?.inHours.remainder(24).toString().padLeft(2, "0")}",
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: FontSize.s360,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  SizedBox(
-                    height: Sizes.s30,
-                  )
-                ],
-              ),
-              Container(
-                alignment: Alignment.center,
-                height: Sizes.s350,
-                width: Sizes.s350,
-                child: Text(
-                  "${homeC.myDuration.value?.inMinutes.remainder(60).toString().padLeft(2, "0")}",
-                  style: TextStyle(
-                      fontSize: FontSize.s240, fontWeight: FontWeight.bold),
                 ),
-              ),
-              Column(
-                children: [
-                  Text(
-                    ":",
-                    style: TextStyle(
-                        fontSize: FontSize.s240, fontWeight: FontWeight.bold),
+                Text(
+                  ":",
+                  style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontSize: FontSize.s360,
+                      fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "${homeC.myDuration.value?.inMinutes.remainder(60).toString().padLeft(2, "0")}",
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: FontSize.s360,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  SizedBox(
-                    height: Sizes.s30,
-                  )
-                ],
-              ),
-              Container(
-                alignment: Alignment.center,
-                height: Sizes.s350,
-                width: Sizes.s350,
-                child: Text(
-                  "${homeC.myDuration.value?.inSeconds.remainder(60).toString().padLeft(2, "0")}",
-                  style: TextStyle(
-                      fontSize: FontSize.s240, fontWeight: FontWeight.bold),
                 ),
-              ),
-            ],
+                Text(
+                  ":",
+                  style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontSize: FontSize.s360,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: Sizes.s30,
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "${homeC.myDuration.value?.inSeconds.remainder(60).toString().padLeft(2, "0")}",
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: FontSize.s360,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: Sizes.s30,
@@ -219,7 +247,15 @@ class TimerScreen extends StatelessWidget {
                     onPress: () => homeC.onRepeat(),
                   ))
             ],
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: Sizes.s30),
+            child: Image.asset(
+              DirectoryAsset.ghostNoteLogo,
+              height: Sizes.s100,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
         ],
       ),
     );

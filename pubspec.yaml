@@ -51,6 +51,39 @@ flutter:
     - assets/fonts/
 
   fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Light.otf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.otf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-ExtraBold.otf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-LightItalic.otf
+          style: italic
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Italic.otf
+          style: italic
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-MediumItalic.otf
+          style: italic
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-SemiBoldItalic.otf
+          style: italic
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-BoldItalic.otf
+          style: italic
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-ExtraBold.otf
+          style: italic
+          weight: 800
+
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter/Inter-Light.ttf
@@ -83,3 +116,5 @@ flutter:
         - asset: assets/fonts/Inter/Inter-ExtraBold.ttf
           style: italic
           weight: 800
+
+          

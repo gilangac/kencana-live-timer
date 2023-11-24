@@ -273,6 +273,8 @@ class FontSize {
   static double s110 = 110.0;
   static double s200 = 200.0;
   static double s240 = 240.0;
+  static double s340 = 340.0;
+  static double s360 = 360.0;
 
   FontSize(double s14);
 
