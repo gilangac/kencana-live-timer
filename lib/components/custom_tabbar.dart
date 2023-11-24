@@ -31,9 +31,11 @@ class CustomTabBar extends StatelessWidget {
           : null,
       padding: EdgeInsets.all(Sizes.s4),
       child: TabBar(
+        tabAlignment: TabAlignment.center,
         labelPadding: EdgeInsets.zero,
         padding: EdgeInsets.all(Sizes.s4),
-        isScrollable: true,
+        isScrollable: false,
+        dividerHeight: 0,
         unselectedLabelColor: Get.theme.colorScheme.surface,
         labelColor: AssetColor.backgroundLight,
         labelStyle: Get.textTheme.bodyMedium!

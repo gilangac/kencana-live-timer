@@ -108,6 +108,7 @@ class _PreviewScreenState extends State<PreviewScreen> {
             if (["pdf", "png", "jpg", "jpeg", "bmp", "heif"]
                 .contains(element.path.split(".").last.toLowerCase())) {
               homeC.listPreview.add(File(element.path));
+              homeC.listPreviewName.add(File(element.name));
             } else {
               Get.snackbar(
                   "Format Tidak Didukung", "Format file tidak didukung");
@@ -209,7 +210,8 @@ class _PreviewScreenState extends State<PreviewScreen> {
                     return Row(
                       children: [
                         Expanded(
-                            child: listFile(homeC.listPreview[index].path)),
+                            child: listFile(homeC.listPreview[index].path,
+                                homeC.listPreviewName[index].path)),
                         GestureDetector(
                           onTap: () {
                             Get.defaultDialog(
@@ -223,6 +225,7 @@ class _PreviewScreenState extends State<PreviewScreen> {
                                   Get.back();
                                   setState(() {
                                     homeC.listPreview.removeAt(index);
+                                    homeC.listPreviewName.removeAt(index);
                                   });
                                 },
                                 content: SizedBox(
@@ -255,11 +258,12 @@ class _PreviewScreenState extends State<PreviewScreen> {
     );
   }
 
-  Widget listFile(String path) {
+  Widget listFile(String path, String name) {
     return GestureDetector(
       onTap: () => Get.to(
           () => FileViewPage(
                 path: path,
+                name: name,
               ),
           arguments: path),
       child: Container(
@@ -283,7 +287,7 @@ class _PreviewScreenState extends State<PreviewScreen> {
               width: Sizes.s10,
             ),
             Text(
-              path.split("/").last,
+              name,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   fontFamily: "Inter",

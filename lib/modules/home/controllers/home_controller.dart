@@ -19,8 +19,9 @@ class HomeController extends GetxController {
 
   int remainingSeconds = 1;
   Timer? countdownTimer;
-  
+
   final List<File> listPreview = [];
+  final List<File> listPreviewName = [];
 
   void onStartCount() {
     if (hoursFC.text == "" && minutesC.text == "" && secondsC.text == "") {

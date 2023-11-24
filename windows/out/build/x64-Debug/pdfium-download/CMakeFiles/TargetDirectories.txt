@@ -1,0 +1,3 @@
+C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/CMakeFiles/pdfium-download.dir
+C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/CMakeFiles/edit_cache.dir
+C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/CMakeFiles/rebuild_cache.dir

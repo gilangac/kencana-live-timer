@@ -28,7 +28,8 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: Sizes.s15),
             child: Image.asset(
               DirectoryAsset.ghostNoteLogo,
-              height: Sizes.s10,
+              height: Sizes.s80,
+              fit: BoxFit.fitHeight,
             ),
           ),
           Padding(
@@ -37,7 +38,11 @@ class HomePage extends StatelessWidget {
                 top: Sizes.s10,
                 bottom: Sizes.s10,
                 left: Sizes.s8),
-            child: Image.asset(DirectoryAsset.kencanaLiveLogo),
+            child: Image.asset(
+              DirectoryAsset.kencanaLiveLogo,
+              height: Sizes.s80,
+              fit: BoxFit.fitHeight,
+            ),
           ),
         ],
       ),

@@ -1,0 +1,21 @@
+# ninja log v5
+3	101	7224966234183756	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-mkdir	1b3c41b093fa8e09
+2108	2208	7224966255284787	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-update	74b9a26a8cd06377
+3	101	7224966234183756	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-mkdir	1b3c41b093fa8e09
+102	2107	7224966254235386	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-download	e71a4506ec0c3301
+102	2107	7224966254235386	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-download	e71a4506ec0c3301
+2499	2590	7224966259082734	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-install	e54335460358eda
+2208	2308	7224966256214260	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-patch	6f075d123269abe9
+2108	2208	7224966255284787	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-update	74b9a26a8cd06377
+2208	2308	7224966256214260	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-patch	6f075d123269abe9
+2591	2698	7224966260152129	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-test	80aeae6ac5218fc0
+2308	2408	7224966257273792	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-configure	ec5c1ca20329ca8a
+2499	2590	7224966259082734	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-install	e54335460358eda
+2591	2698	7224966260152129	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-test	80aeae6ac5218fc0
+2308	2408	7224966257273792	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-configure	ec5c1ca20329ca8a
+2408	2499	7224966258173309	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-build	b1e5dbc1268fb658
+2408	2499	7224966258173309	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-build	b1e5dbc1268fb658
+2698	2830	7224966261521352	CMakeFiles/pdfium-download-complete	6ad356422d83ac25
+2698	2830	7224966261521352	pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-done	6ad356422d83ac25
+2698	2830	7224966261521352	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/CMakeFiles/pdfium-download-complete	6ad356422d83ac25
+2698	2830	7224966261521352	C:/Users/bimaa/OneDrive/Documents/GitHub/kencana-live-timer/windows/out/build/x64-Debug/pdfium-download/pdfium-download-prefix/src/pdfium-download-stamp/pdfium-download-done	6ad356422d83ac25

@@ -102,7 +102,7 @@ class AppTheme {
         shadow: AssetColor.surfaceTintLight.withOpacity(0.5),
         secondaryContainer: Colors.grey[300]),
     fontFamily: 'Inter',
-    androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
+    // androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
     appBarTheme: const AppBarTheme(
       backgroundColor: AssetColor.backgroundLight,
       foregroundColor: AssetColor.onSurfaceLight,
@@ -245,7 +245,7 @@ class AppTheme {
         shadow: AssetColor.surfaceTintDark.withOpacity(0.5),
         secondaryContainer: AssetColor.surfaceTintDark.withOpacity(0.5)),
     fontFamily: 'Inter',
-    androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
+    // androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
     appBarTheme: const AppBarTheme(
       backgroundColor: AssetColor.backgroundDark,
       foregroundColor: AssetColor.onSurfaceDark,

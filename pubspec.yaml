@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   desktop_drop: ^0.4.4
   desktop_window: ^0.4.0
+  excel: ^3.0.0
   flutter:
     sdk: flutter
   flutter_file_view: ^2.2.1
@@ -21,9 +22,9 @@ dependencies:
   flutter_svg: 2.0.8
   get: 4.6.5
   iconly: 1.0.1
-  intl: ^0.17.0
-  pdfx: ^2.5.0
   shared_preferences: ^2.0.6
+  syncfusion_flutter_pdfviewer: ^23.2.4
+  syncfusion_flutter_xlsio: ^23.2.4
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -34,7 +35,7 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/logo.png"
-  min_sdk_android: 21 
+  min_sdk_android: 21
   windows:
     generate: true
     image_path: "assets/images/logo.png"
