@@ -17,12 +17,14 @@ class TimerScreen extends StatelessWidget {
     return Container(
       color: Colors.transparent,
       child: Obx(() => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                homeC.isCount.value ? countDownTimer() : inputTimer(),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  homeC.isCount.value ? countDownTimer() : inputTimer(),
+                ],
+              ),
             ),
           )),
     );
@@ -32,19 +34,19 @@ class TimerScreen extends StatelessWidget {
     HomeController homeC = Get.find();
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.only(bottom: Sizes.s15),
-          child: Image.asset(
-            DirectoryAsset.kencanaLiveLogo,
-            height: Sizes.s180,
-            fit: BoxFit.fitHeight,
-          ),
+        Image.asset(
+          DirectoryAsset.kencanaLiveLogo,
+          height: Sizes.s110,
+          fit: BoxFit.fitHeight,
         ),
         Container(
           width: Sizes.s465,
           padding: EdgeInsets.all(Sizes.s1),
           margin: EdgeInsets.only(
-              right: Sizes.s50, left: Sizes.s50, bottom: Sizes.s20),
+              top: Sizes.s55,
+              right: Sizes.s50,
+              left: Sizes.s50,
+              bottom: Sizes.s20),
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -127,14 +129,11 @@ class TimerScreen extends StatelessWidget {
                 ))
           ],
         ),
-        SizedBox(
-          height: Sizes.s30,
-        ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: Sizes.s15),
+          padding: EdgeInsets.symmetric(vertical: Sizes.s50),
           child: Image.asset(
             DirectoryAsset.ghostNoteLogo,
-            height: Sizes.s120,
+            height: Sizes.s100,
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -147,14 +146,12 @@ class TimerScreen extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(bottom: Sizes.s15),
-            child: Image.asset(
-              DirectoryAsset.kencanaLiveLogo,
-              height: Sizes.s140,
-              fit: BoxFit.fitHeight,
-            ),
+          Image.asset(
+            DirectoryAsset.kencanaLiveLogo,
+            height: Sizes.s110,
+            fit: BoxFit.fitHeight,
           ),
+          SizedBox(height: Sizes.s40),
           Text(
             homeC.mainFC.text,
             style:
@@ -162,6 +159,7 @@ class TimerScreen extends StatelessWidget {
           ),
           Container(
             height: Sizes.s400,
+            padding: EdgeInsets.zero,
             alignment: Alignment.topCenter,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -169,12 +167,14 @@ class TimerScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
+                    padding: EdgeInsets.zero,
                     alignment: Alignment.center,
                     child: Text(
                       "${homeC.myDuration.value?.inHours.remainder(24).toString().padLeft(2, "0")}",
                       style: TextStyle(
+                          height: 1,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s360,
+                          fontSize: FontSize.s300,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -182,8 +182,9 @@ class TimerScreen extends StatelessWidget {
                 Text(
                   ":",
                   style: TextStyle(
+                      height: 1,
                       fontFamily: "Poppins",
-                      fontSize: FontSize.s360,
+                      fontSize: FontSize.s300,
                       fontWeight: FontWeight.bold),
                 ),
                 Expanded(
@@ -192,8 +193,9 @@ class TimerScreen extends StatelessWidget {
                     child: Text(
                       "${homeC.myDuration.value?.inMinutes.remainder(60).toString().padLeft(2, "0")}",
                       style: TextStyle(
+                          height: 1,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s360,
+                          fontSize: FontSize.s300,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -201,8 +203,9 @@ class TimerScreen extends StatelessWidget {
                 Text(
                   ":",
                   style: TextStyle(
+                      height: 1,
                       fontFamily: "Poppins",
-                      fontSize: FontSize.s360,
+                      fontSize: FontSize.s300,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -214,17 +217,15 @@ class TimerScreen extends StatelessWidget {
                     child: Text(
                       "${homeC.myDuration.value?.inSeconds.remainder(60).toString().padLeft(2, "0")}",
                       style: TextStyle(
+                          height: 1,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s360,
+                          fontSize: FontSize.s300,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: Sizes.s30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -249,7 +250,7 @@ class TimerScreen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(top: Sizes.s30),
+            padding: EdgeInsets.only(top: Sizes.s50),
             child: Image.asset(
               DirectoryAsset.ghostNoteLogo,
               height: Sizes.s100,

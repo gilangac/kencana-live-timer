@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,18 +13,17 @@ class HomeController extends GetxController {
   final TextEditingController minutesC = TextEditingController();
   final TextEditingController secondsC = TextEditingController();
 
-  var isCount = false.obs;
-
-  var myDuration = Rxn<Duration>();
+  final List<File> listPreview = [];
+  final List<File> listPreviewName = [];
   final time = '00.00'.obs;
 
   int remainingSeconds = 1;
   Timer? countdownTimer;
 
-  final List<File> listPreview = [];
-  final List<File> listPreviewName = [];
+  var isCount = false.obs;
+  var myDuration = Rxn<Duration>();
 
-  void onStartCount() {
+  void onStartCount() async {
     if (hoursFC.text == "" && minutesC.text == "" && secondsC.text == "") {
       Get.snackbar("Input Waktu", "Masukkan waktu terlebih dahulu!");
     } else {
@@ -75,5 +75,21 @@ class HomeController extends GetxController {
   void resetTimer() {
     stopTimer();
     myDuration.value = Duration(minutes: int.parse(minutesC.text));
+  }
+
+  Future<List> pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      allowedExtensions: ['jpg', 'jpeg', 'png', 'heif', 'pdf'],
+      type: FileType.custom,
+    );
+
+    if (result != null) {
+      // File file = File(result.files.single.path!);
+      // listPreview.add(File(file.path));
+      // listPreviewName.add(File(result.files.single.name));
+      return [result.files.single.path!, result.files.single.name];
+    } else {
+      return [];
+    }
   }
 }

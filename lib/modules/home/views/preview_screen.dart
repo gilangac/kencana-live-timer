@@ -158,100 +158,134 @@ class _PreviewScreenState extends State<PreviewScreen> {
             left: Sizes.s50,
             top: Sizes.s55,
             bottom: Sizes.s20),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (homeC.listPreview.isEmpty)
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      IconlyLight.paper_plus,
-                      color: AppColor.blackgrey,
-                      size: Sizes.s60,
-                    ),
-                    SizedBox(
-                      height: Sizes.s10,
-                    ),
-                    Text(
-                      "Tarik file kesini untuk menambahkan",
-                      style: TextStyle(
-                          fontFamily: "Inter",
-                          fontSize: FontSize.s16,
-                          color: AppColor.blackgrey,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      height: Sizes.s4,
-                    ),
-                    Text(
-                      "(Format file yang didukung : pdf, jpg, jpeg, png, heif)",
-                      style: TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: FontSize.s12,
-                        color: AppColor.blackgrey,
+            Row(
+              children: [
+                Spacer(),
+                Container(
+                    margin: EdgeInsets.all(Sizes.s10),
+                    height: Sizes.s40,
+                    width: Sizes.s140,
+                    child: CustomButtonPrimary(
+                      icon: IconlyBold.plus,
+                      text: "Tambah",
+                      onPress: () async {
+                        var listResult = await homeC.pickFile();
+                        if (listResult.isNotEmpty) {
+                          setState(() {
+                            homeC.listPreview.add(File(listResult[0]));
+                            homeC.listPreviewName.add(File(listResult[1]));
+                          });
+                        }
+                      },
+                    )),
+              ],
+            ),
+            Divider(
+              height: 2,
+              color: AppColor.blackgrey,
+            ),
+            Expanded(
+              child: Stack(
+                children: [
+                  if (homeC.listPreview.isEmpty)
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            IconlyLight.paper_plus,
+                            color: AppColor.blackgrey,
+                            size: Sizes.s60,
+                          ),
+                          SizedBox(
+                            height: Sizes.s10,
+                          ),
+                          Text(
+                            "Tarik file kesini untuk menambahkan",
+                            style: TextStyle(
+                                fontFamily: "Inter",
+                                fontSize: FontSize.s16,
+                                color: AppColor.blackgrey,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(
+                            height: Sizes.s4,
+                          ),
+                          Text(
+                            "(Format file yang didukung : pdf, jpg, jpeg, png, heif)",
+                            style: TextStyle(
+                              fontFamily: "Inter",
+                              fontSize: FontSize.s12,
+                              color: AppColor.blackgrey,
+                            ),
+                          )
+                        ],
                       ),
                     )
-                  ],
-                ),
-              )
-            else
-              // listFile(homeC.listPreview.map((e) => e.path).join("\n")),
-              // Text(homeC.listPreview.map((e) => e.path).join("\n")),
-              ListView.separated(
-                  padding: EdgeInsets.all(Sizes.s20),
-                  itemCount: homeC.listPreview.length,
-                  separatorBuilder: (ctx, index) {
-                    return const Divider(
-                      thickness: 0.5,
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        Expanded(
-                            child: listFile(homeC.listPreview[index].path,
-                                homeC.listPreviewName[index].path)),
-                        GestureDetector(
-                          onTap: () {
-                            Get.defaultDialog(
-                                title: "Hapus File",
-                                titlePadding: EdgeInsets.only(top: Sizes.s10),
-                                contentPadding: EdgeInsets.all(Sizes.s20),
-                                middleText:
-                                    "Apakah anda yakin akan menghapus file dari preview?",
-                                confirmTextColor: Colors.white,
-                                onConfirm: () {
-                                  Get.back();
-                                  setState(() {
-                                    homeC.listPreview.removeAt(index);
-                                    homeC.listPreviewName.removeAt(index);
-                                  });
+                  else
+                    // listFile(homeC.listPreview.map((e) => e.path).join("\n")),
+                    // Text(homeC.listPreview.map((e) => e.path).join("\n")),
+                    ListView.separated(
+                        padding: EdgeInsets.all(Sizes.s20),
+                        itemCount: homeC.listPreview.length,
+                        separatorBuilder: (ctx, index) {
+                          return const Divider(
+                            thickness: 0.5,
+                          );
+                        },
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                  child: listFile(homeC.listPreview[index].path,
+                                      homeC.listPreviewName[index].path)),
+                              GestureDetector(
+                                onTap: () {
+                                  Get.defaultDialog(
+                                      title: "Hapus File",
+                                      titlePadding:
+                                          EdgeInsets.only(top: Sizes.s10),
+                                      contentPadding: EdgeInsets.all(Sizes.s20),
+                                      middleText:
+                                          "Apakah anda yakin akan menghapus file dari preview?",
+                                      confirmTextColor: Colors.white,
+                                      onConfirm: () {
+                                        Get.back();
+                                        setState(() {
+                                          homeC.listPreview.removeAt(index);
+                                          homeC.listPreviewName.removeAt(index);
+                                        });
+                                      },
+                                      content: SizedBox(
+                                        height: Sizes.s40,
+                                        child: const Text(
+                                            "Apakah anda yakin akan menghapus file dari preview?"),
+                                      ),
+                                      textConfirm: "Hapus",
+                                      textCancel: "Batal");
                                 },
-                                content: SizedBox(
-                                  height: Sizes.s40,
-                                  child: const Text(
-                                      "Apakah anda yakin akan menghapus file dari preview?"),
+                                child: const Icon(
+                                  IconlyBold.delete,
+                                  color: AssetColor.error,
                                 ),
-                                textConfirm: "Hapus",
-                                textCancel: "Batal");
-                          },
-                          child: const Icon(
-                            IconlyBold.delete,
-                            color: AssetColor.error,
-                          ),
-                        )
-                      ],
-                    );
-                  }),
-            if (offset != null)
-              Align(
-                alignment: Alignment.topRight,
-                child: Text(
-                  '$offset',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              )
+                              )
+                            ],
+                          );
+                        }),
+                  if (offset != null)
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Text(
+                        '$offset',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    )
+                ],
+              ),
+            ),
           ],
         ),
       ),

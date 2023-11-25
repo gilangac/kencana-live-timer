@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-double defaultScreenWidth = 400.0;
-double defaultScreenHeight = 810.0;
+double defaultScreenWidth = 1200.0;
+double defaultScreenHeight = 800.0;
 double screenWidth = defaultScreenWidth;
 double screenHeight = defaultScreenHeight;
 
@@ -110,22 +110,22 @@ class Sizes {
 
     await getSize();
 
-    if (screenWidth > 300 && screenWidth < 500) {
-      defaultScreenWidth = 450.0;
-      defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
-    } else if (screenWidth > 500 && screenWidth < 600) {
-      defaultScreenWidth = 500.0;
-      defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
-    } else if (screenWidth > 600 && screenWidth < 700) {
-      defaultScreenWidth = 550.0;
-      defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
-    } else if (screenWidth > 700 && screenWidth < 1050) {
-      defaultScreenWidth = 800.0;
-      defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
-    } else {
-      defaultScreenWidth = screenWidth;
-      defaultScreenHeight = screenHeight;
-    }
+    // if (screenWidth > 300 && screenWidth < 500) {
+    //   defaultScreenWidth = 450.0;
+    //   defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
+    // } else if (screenWidth > 500 && screenWidth < 600) {
+    //   defaultScreenWidth = 500.0;
+    //   defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
+    // } else if (screenWidth > 600 && screenWidth < 700) {
+    //   defaultScreenWidth = 550.0;
+    //   defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
+    // } else if (screenWidth > 700 && screenWidth < 1050) {
+    //   defaultScreenWidth = 800.0;
+    //   defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
+    // } else {
+    //   defaultScreenWidth = screenWidth;
+    //   defaultScreenHeight = screenHeight;
+    // }
     ScreenUtil.init(
       context,
       designSize: Size(
@@ -273,6 +273,7 @@ class FontSize {
   static double s110 = 110.0;
   static double s200 = 200.0;
   static double s240 = 240.0;
+  static double s300 = 300.0;
   static double s340 = 340.0;
   static double s360 = 360.0;
 

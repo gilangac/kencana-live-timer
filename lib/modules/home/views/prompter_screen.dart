@@ -25,7 +25,11 @@ class PrompterScreen extends StatelessWidget {
       child: TextField(
         controller: homeC.prompterFC,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: FontSize.s40),
+        style: TextStyle(
+            fontSize: FontSize.s40,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 2,
+            wordSpacing: 2),
         maxLines: 100,
         decoration: const InputDecoration(
             focusedErrorBorder: InputBorder.none,
