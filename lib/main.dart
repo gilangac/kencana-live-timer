@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomeController());
     return ScreenUtilInit(
-        designSize: Size(1200, 800),
+        designSize: Size(Get.width, Get.height),
         builder: (context, child) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,

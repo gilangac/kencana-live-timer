@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 4,
         title: const Text(
-          "KENCANA LIVE TIMER",
+          "KENCANA LIVE SHOW MANAGEMENT",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: "inter",

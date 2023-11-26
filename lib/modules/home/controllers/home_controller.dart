@@ -21,7 +21,10 @@ class HomeController extends GetxController {
   Timer? countdownTimer;
 
   var isCount = false.obs;
+  var isPause = false.obs;
   var myDuration = Rxn<Duration>();
+
+  int sencondsRunning = 0;
 
   void onStartCount() async {
     if (hoursFC.text == "" && minutesC.text == "" && secondsC.text == "") {
@@ -33,6 +36,7 @@ class HomeController extends GetxController {
   }
 
   void onStopCount() {
+    isPause.value = false;
     isCount.value = false;
     countdownTimer!.cancel();
   }
@@ -42,13 +46,26 @@ class HomeController extends GetxController {
     startTimer();
   }
 
+  void onPause() {
+    isPause.value = !isPause.value;
+    isPause.value ? countdownTimer!.cancel() : playTimer();
+  }
+
   void onReset() {
     hoursFC.clear();
     minutesC.clear();
     secondsC.clear();
   }
 
+  void playTimer() {
+    myDuration.value = Duration(seconds: sencondsRunning);
+
+    countdownTimer =
+        Timer.periodic(const Duration(seconds: 1), (_) => setCountDown());
+  }
+
   void startTimer() {
+    isPause.value = false;
     myDuration.value = Duration(
         hours: int.parse(hoursFC.text != "" ? hoursFC.text : "0"),
         minutes: int.parse(minutesC.text != "" ? minutesC.text : "0"),
@@ -60,11 +77,11 @@ class HomeController extends GetxController {
 
   void setCountDown() {
     const reduceSecondsBy = 1;
-    final seconds = myDuration.value!.inSeconds - reduceSecondsBy;
-    if (seconds < 0) {
+    sencondsRunning = myDuration.value!.inSeconds - reduceSecondsBy;
+    if (sencondsRunning < 0) {
       countdownTimer!.cancel();
     } else {
-      myDuration.value = Duration(seconds: seconds);
+      myDuration.value = Duration(seconds: sencondsRunning);
     }
   }
 

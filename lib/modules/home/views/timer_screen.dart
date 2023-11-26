@@ -36,14 +36,14 @@ class TimerScreen extends StatelessWidget {
       children: [
         Image.asset(
           DirectoryAsset.kencanaLiveLogo,
-          height: Sizes.s110,
+          height: Get.height * 0.1,
           fit: BoxFit.fitHeight,
         ),
         Container(
           width: Sizes.s465,
           padding: EdgeInsets.all(Sizes.s1),
           margin: EdgeInsets.only(
-              top: Sizes.s55,
+              top: Get.height * 0.05,
               right: Sizes.s50,
               left: Sizes.s50,
               bottom: Sizes.s20),
@@ -78,14 +78,15 @@ class TimerScreen extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: Sizes.s20,
+          height: Get.height * 0.01,
         ),
         Text(
           "INPUT WAKTU",
-          style: TextStyle(fontSize: FontSize.s32, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: Get.height * 0.04, fontWeight: FontWeight.bold),
         ),
         SizedBox(
-          height: Sizes.s20,
+          height: Get.height * 0.01,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +106,7 @@ class TimerScreen extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: Sizes.s30,
+          height: Get.height * 0.02,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -130,10 +131,10 @@ class TimerScreen extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: Sizes.s50),
+          padding: EdgeInsets.symmetric(vertical: Get.height * 0.02),
           child: Image.asset(
             DirectoryAsset.ghostNoteLogo,
-            height: Sizes.s100,
+            height: Get.height * 0.1,
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -148,19 +149,19 @@ class TimerScreen extends StatelessWidget {
         children: [
           Image.asset(
             DirectoryAsset.kencanaLiveLogo,
-            height: Sizes.s110,
+            height: Get.height * 0.1,
             fit: BoxFit.fitHeight,
           ),
-          SizedBox(height: Sizes.s40),
+          SizedBox(height: Sizes.s20),
           Text(
             homeC.mainFC.text,
             style:
-                TextStyle(fontSize: FontSize.s40, fontWeight: FontWeight.w700),
+                TextStyle(fontSize: FontSize.s40, fontWeight: FontWeight.w800),
           ),
           Container(
-            height: Sizes.s400,
+            color: Colors.transparent,
             padding: EdgeInsets.zero,
-            alignment: Alignment.topCenter,
+            alignment: Alignment.center,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -172,9 +173,10 @@ class TimerScreen extends StatelessWidget {
                     child: Text(
                       "${homeC.myDuration.value?.inHours.remainder(24).toString().padLeft(2, "0")}",
                       style: TextStyle(
-                          height: 1,
+                          height: 0.5,
+                          letterSpacing: 0,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s300,
+                          fontSize: Get.height * 0.30,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -183,8 +185,9 @@ class TimerScreen extends StatelessWidget {
                   ":",
                   style: TextStyle(
                       height: 1,
+                      letterSpacing: 0,
                       fontFamily: "Poppins",
-                      fontSize: FontSize.s300,
+                      fontSize: Get.height * 0.30,
                       fontWeight: FontWeight.bold),
                 ),
                 Expanded(
@@ -193,9 +196,10 @@ class TimerScreen extends StatelessWidget {
                     child: Text(
                       "${homeC.myDuration.value?.inMinutes.remainder(60).toString().padLeft(2, "0")}",
                       style: TextStyle(
-                          height: 1,
+                          height: 0.5,
+                          letterSpacing: 0,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s300,
+                          fontSize: Get.height * 0.30,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -204,8 +208,9 @@ class TimerScreen extends StatelessWidget {
                   ":",
                   style: TextStyle(
                       height: 1,
+                      letterSpacing: 0,
                       fontFamily: "Poppins",
-                      fontSize: FontSize.s300,
+                      fontSize: Get.height * 0.30,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -217,9 +222,10 @@ class TimerScreen extends StatelessWidget {
                     child: Text(
                       "${homeC.myDuration.value?.inSeconds.remainder(60).toString().padLeft(2, "0")}",
                       style: TextStyle(
-                          height: 1,
+                          height: 0.5,
+                          letterSpacing: 0,
                           fontFamily: "Poppins",
-                          fontSize: FontSize.s300,
+                          fontSize: Get.height * 0.30,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -240,6 +246,16 @@ class TimerScreen extends StatelessWidget {
               SizedBox(
                 width: Sizes.s14,
               ),
+              Obx(() => SizedBox(
+                  height: Sizes.s48,
+                  width: Sizes.s120,
+                  child: CustomButtonPrimary(
+                    text: homeC.isPause.value ? "Play" : "Pause",
+                    onPress: () => homeC.onPause(),
+                  ))),
+              SizedBox(
+                width: Sizes.s14,
+              ),
               SizedBox(
                   height: Sizes.s48,
                   width: Sizes.s120,
@@ -250,10 +266,10 @@ class TimerScreen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(top: Sizes.s50),
+            padding: EdgeInsets.only(top: Sizes.s30),
             child: Image.asset(
               DirectoryAsset.ghostNoteLogo,
-              height: Sizes.s100,
+              height: Get.height * 0.1,
               fit: BoxFit.fitHeight,
             ),
           ),
@@ -275,8 +291,8 @@ class TimeInputWidget extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.all(Sizes.s12),
-          height: Sizes.s136,
-          width: Sizes.s136,
+          height: Get.height * 0.15,
+          width: Get.height * 0.15,
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -304,19 +320,20 @@ class TimeInputWidget extends StatelessWidget {
                   counterText: "",
                   hintStyle: TextStyle(
                       color: AppColor.blackgrey,
-                      fontSize: FontSize.s64,
+                      fontSize: Get.height * 0.08,
                       fontWeight: FontWeight.bold)),
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.digitsOnly
               ],
               style: TextStyle(
-                  fontSize: FontSize.s64, fontWeight: FontWeight.bold),
+                  fontSize: Get.height * 0.08, fontWeight: FontWeight.bold),
             ),
           ),
         ),
         Text(
           label,
-          style: TextStyle(fontSize: FontSize.s32, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: Get.height * 0.04, fontWeight: FontWeight.bold),
         )
       ],
     );

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-double defaultScreenWidth = 1200.0;
-double defaultScreenHeight = 800.0;
+double defaultScreenWidth = Get.width;
+double defaultScreenHeight = Get.height;
 double screenWidth = defaultScreenWidth;
 double screenHeight = defaultScreenHeight;
 
@@ -96,13 +97,13 @@ class Sizes {
   static double paddingForm = s20;
 
   static Future setScreenAwareConstant(context) async {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    screenWidth = Get.width;
+    screenHeight = Get.height;
 
     getSize() async {
       if (screenWidth == 0 || screenHeight == 0) {
-        screenWidth = MediaQuery.of(context).size.width;
-        screenHeight = MediaQuery.of(context).size.height;
+        screenWidth = Get.width;
+        screenHeight = Get.height;
         await Future.delayed(const Duration(milliseconds: 300));
         await getSize();
       }
@@ -123,8 +124,8 @@ class Sizes {
     //   defaultScreenWidth = 800.0;
     //   defaultScreenHeight = defaultScreenWidth * screenHeight / screenWidth;
     // } else {
-    //   defaultScreenWidth = screenWidth;
-    //   defaultScreenHeight = screenHeight;
+    defaultScreenWidth = screenWidth;
+    defaultScreenHeight = screenHeight;
     // }
     ScreenUtil.init(
       context,
