@@ -152,7 +152,7 @@ class TimerScreen extends StatelessWidget {
             height: Get.height * 0.1,
             fit: BoxFit.fitHeight,
           ),
-          SizedBox(height: Sizes.s80),
+          SizedBox(height: Sizes.s120),
           Text(
             homeC.mainFC.text,
             style:
@@ -184,7 +184,7 @@ class TimerScreen extends StatelessWidget {
                 Text(
                   ":",
                   style: TextStyle(
-                      height: 1,
+                      height: 0.5,
                       letterSpacing: 0,
                       fontFamily: "Poppins",
                       fontSize: Get.height * 0.30,
@@ -207,7 +207,7 @@ class TimerScreen extends StatelessWidget {
                 Text(
                   ":",
                   style: TextStyle(
-                      height: 1,
+                      height: 0.5,
                       letterSpacing: 0,
                       fontFamily: "Poppins",
                       fontSize: Get.height * 0.30,
@@ -232,6 +232,9 @@ class TimerScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          SizedBox(
+            height: Sizes.s40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
