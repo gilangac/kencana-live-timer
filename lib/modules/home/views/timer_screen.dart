@@ -152,7 +152,7 @@ class TimerScreen extends StatelessWidget {
             height: Get.height * 0.1,
             fit: BoxFit.fitHeight,
           ),
-          SizedBox(height: Sizes.s20),
+          SizedBox(height: Sizes.s80),
           Text(
             homeC.mainFC.text,
             style:
